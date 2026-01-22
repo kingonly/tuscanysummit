@@ -21,7 +21,7 @@ export default function Home() {
           className="absolute inset-0 w-full h-full object-cover"
           poster="/background.png"
         >
-          <source src="/2023.mp4" type="video/mp4" />
+          <source src="https://pub-9ca1c1f78ab9468a9cc2109ab06c2707.r2.dev/2023.mp4" type="video/mp4" />
         </video>
         
         {/* Gradient overlays */}
