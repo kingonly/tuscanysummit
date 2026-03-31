@@ -74,10 +74,11 @@ export default function Navigation() {
           {/* Desktop menu */}
           <div className="hidden md:flex items-center gap-1">
             {[
-              { href: "#about", label: "About" },
-              { href: "#location", label: "Location" },
-              { href: "#agenda", label: "Agenda" },
-              { href: "#host", label: "Host" },
+              { href: "/#about", label: "About" },
+              { href: "/#location", label: "Location" },
+              { href: "/#agenda", label: "Agenda" },
+              { href: "/submit-session/", label: "Submit Session" },
+              { href: "/#host", label: "Host" },
             ].map((link) => (
               <Link
                 key={link.href}
@@ -88,7 +89,7 @@ export default function Navigation() {
                 <span className="absolute inset-0 bg-[#F5F0E8]/5 rounded-lg scale-90 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-300" />
               </Link>
             ))}
-            
+
             <Link
               href="https://luma.com/fcp4ov95"
               target="_blank"
@@ -111,10 +112,11 @@ export default function Navigation() {
         >
           <div className="flex flex-col gap-2 p-4 bg-[#1A1A1A]/95 backdrop-blur-xl rounded-xl border border-[#F5F0E8]/10">
             {[
-              { href: "#about", label: "About" },
-              { href: "#location", label: "Location" },
-              { href: "#agenda", label: "Agenda" },
-              { href: "#host", label: "Host" },
+              { href: "/#about", label: "About" },
+              { href: "/#location", label: "Location" },
+              { href: "/#agenda", label: "Agenda" },
+              { href: "/submit-session/", label: "Submit Session" },
+              { href: "/#host", label: "Host" },
             ].map((link) => (
               <Link
                 key={link.href}
