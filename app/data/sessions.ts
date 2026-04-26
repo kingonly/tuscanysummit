@@ -31,7 +31,7 @@ export interface PMRow {
 }
 
 const death_of_bitcoin_companies: AgendaItem = {
-  type: "talk",
+  type: "keynote",
   title: "The Death Of Bitcoin Companies",
   speaker: "Marco Argentieri",
   description:
@@ -39,7 +39,7 @@ const death_of_bitcoin_companies: AgendaItem = {
 };
 
 const lightning_as_trust_network: AgendaItem = {
-  type: "talk",
+  type: "keynote",
   title: "Lightning as a Trust Network",
   speaker: "John Carvalho",
   description:
@@ -128,7 +128,7 @@ export const day1PM: PMRow[] = [
     trackB: {
       type: "talk",
       title: "Wallet-Linked Offers: The Missing Incentive Layer",
-      speaker: "Tomas Chojnacki (Satsback Labs)",
+      speaker: "Tomas Chojnacki",
       description:
         "Bitcoin merchant infrastructure is here. Payment volume isn't. The missing piece is incentives \u2014 the same lever card networks used to drive mass payment adoption. We built the Bitcoin-native equivalent: merchant-funded wallet-linked offers on Lightning and NWC that deliver instant sats-back to any Lightning wallet, at any BTCPay Server merchant, without surveillance. Live demo included.",
     },
@@ -202,7 +202,7 @@ export const day2PM: PMRow[] = [
     trackB: {
       type: "talk",
       title: "From Prompt to Payment: AI Agents on Bitcoin",
-      speaker: "Moritz Kaminski (Alby)",
+      speaker: "Moritz Kaminski",
       description:
         "This talk explores how Bitcoin integrates with X402 and MPP, alongside emerging tools that enable agents to autonomously pay for APIs, data, and services. We'll examine activity across these ecosystems, share real-world demos, and highlight what's still missing to unlock machine-native commerce with Bitcoin.",
     },
