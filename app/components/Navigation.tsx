@@ -77,7 +77,6 @@ export default function Navigation() {
               { href: "/#about", label: "About" },
               { href: "/#location", label: "Location" },
               { href: "/#agenda", label: "Agenda" },
-              { href: "/submit-session/", label: "Submit Session" },
               { href: "/#host", label: "Host" },
             ].map((link) => (
               <Link
@@ -115,7 +114,6 @@ export default function Navigation() {
               { href: "/#about", label: "About" },
               { href: "/#location", label: "Location" },
               { href: "/#agenda", label: "Agenda" },
-              { href: "/submit-session/", label: "Submit Session" },
               { href: "/#host", label: "Host" },
             ].map((link) => (
               <Link
