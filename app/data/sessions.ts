@@ -144,11 +144,11 @@ export const day1PM: PMRow[] = [
         "Confidential computing unlocks better self-custodial experiences for Bitcoin payments and enables an extra layer of protection for all kinds of sensitive applications. Its trust assumptions are baked into the hardware and enable service providers to prove what is actually running (ecash mints, federations, swap services, ASP, LSP, SOs) while at the same time protecting the secrets. We already have verifiable builds in Bitcoin signers; with this we can build verifiable 3rd-party services.",
     },
     trackB: {
-      type: "discussion",
-      title: "P2Poolv2 Payouts",
-      speaker: "Kulpreet Singh",
+      type: "talk",
+      title: "From Prompt to Payment: AI Agents on Bitcoin",
+      speaker: "Moritz Kaminski",
       description:
-        "P2Poolv2's payout mechanism lets miners trade their PoW shares for BTC using atomic swaps \u2014 potentially through Boltz. However, the liquidity and cross-chain nature of our swaps is a concern, and it seems LN implementations have stopped supporting cross-chain swaps (does Core Lightning still maintain it?). The goal is to brainstorm with Lightning developers how we can address these concerns, and to share how Ark seems more promising for decentralising payouts.",
+        "This talk explores how Bitcoin integrates with X402 and MPP, alongside emerging tools that enable agents to autonomously pay for APIs, data, and services. We'll examine activity across these ecosystems, share real-world demos, and highlight what's still missing to unlock machine-native commerce with Bitcoin.",
     },
   },
   { time: "15:15 \u2013 15:30", isBreak: true },
@@ -200,11 +200,11 @@ export const day2PM: PMRow[] = [
         "B-SSL is a Taproot-based, covenant-free vault architecture that makes Bitcoin self-custody survive key loss. Even if all keys are lost, funds remain recoverable through time-locked paths involving custodians \u2014 who cannot collude due to enforced delays. It removes the need for trust: keep full ownership of your funds while B-SSL ensures you can always regain access.",
     },
     trackB: {
-      type: "talk",
-      title: "From Prompt to Payment: AI Agents on Bitcoin",
-      speaker: "Moritz Kaminski",
+      type: "discussion",
+      title: "P2Poolv2 Payouts",
+      speaker: "Kulpreet Singh",
       description:
-        "This talk explores how Bitcoin integrates with X402 and MPP, alongside emerging tools that enable agents to autonomously pay for APIs, data, and services. We'll examine activity across these ecosystems, share real-world demos, and highlight what's still missing to unlock machine-native commerce with Bitcoin.",
+        "P2Poolv2's payout mechanism lets miners trade their PoW shares for BTC using atomic swaps \u2014 potentially through Boltz. However, the liquidity and cross-chain nature of our swaps is a concern, and it seems LN implementations have stopped supporting cross-chain swaps (does Core Lightning still maintain it?). The goal is to brainstorm with Lightning developers how we can address these concerns, and to share how Ark seems more promising for decentralising payouts.",
     },
   },
   { time: "15:15 \u2013 15:30", isBreak: true },
