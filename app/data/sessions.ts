@@ -138,10 +138,10 @@ export const day1PM: PMRow[] = [
     time: "14:45 \u2013 15:15",
     trackA: {
       type: "talk",
-      title: "B-SSL: Trustless Key Recovery in Self-Custody",
-      speaker: "Francesco Madonna",
+      title: "Confidential Computing: The Missing Piece of Sovereign Infrastructure",
+      speaker: "Aljaz Ceru",
       description:
-        "B-SSL is a Taproot-based, covenant-free vault architecture that makes Bitcoin self-custody survive key loss. Even if all keys are lost, funds remain recoverable through time-locked paths involving custodians \u2014 who cannot collude due to enforced delays. It removes the need for trust: keep full ownership of your funds while B-SSL ensures you can always regain access.",
+        "Confidential computing unlocks better self-custodial experiences for Bitcoin payments and enables an extra layer of protection for all kinds of sensitive applications. Its trust assumptions are baked into the hardware and enable service providers to prove what is actually running (ecash mints, federations, swap services, ASP, LSP, SOs) while at the same time protecting the secrets. We already have verifiable builds in Bitcoin signers; with this we can build verifiable 3rd-party services.",
     },
     trackB: {
       type: "discussion",
@@ -194,10 +194,10 @@ export const day2PM: PMRow[] = [
     time: "14:45 \u2013 15:15",
     trackA: {
       type: "talk",
-      title: "Confidential Computing: The Missing Piece of Sovereign Infrastructure",
-      speaker: "Aljaz Ceru",
+      title: "B-SSL: Trustless Key Recovery in Self-Custody",
+      speaker: "Francesco Madonna",
       description:
-        "Confidential computing unlocks better self-custodial experiences for Bitcoin payments and enables an extra layer of protection for all kinds of sensitive applications. Its trust assumptions are baked into the hardware and enable service providers to prove what is actually running (ecash mints, federations, swap services, ASP, LSP, SOs) while at the same time protecting the secrets. We already have verifiable builds in Bitcoin signers; with this we can build verifiable 3rd-party services.",
+        "B-SSL is a Taproot-based, covenant-free vault architecture that makes Bitcoin self-custody survive key loss. Even if all keys are lost, funds remain recoverable through time-locked paths involving custodians \u2014 who cannot collude due to enforced delays. It removes the need for trust: keep full ownership of your funds while B-SSL ensures you can always regain access.",
     },
     trackB: {
       type: "talk",
