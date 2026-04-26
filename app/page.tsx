@@ -1,6 +1,162 @@
+import { Fragment } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Navigation from "./components/Navigation";
+import {
+  day1AM,
+  day2AM,
+  day1PM,
+  day2PM,
+  type AgendaItem,
+  type AMRow,
+  type ItemType,
+  type PMRow,
+} from "./data/sessions";
+
+function FormatBadge({ type }: { type: ItemType }) {
+  const map: Partial<Record<ItemType, { label: string; cls: string }>> = {
+    talk: { label: "Talk", cls: "text-[#C75B39] border-[#C75B39]/30" },
+    workshop: { label: "Workshop", cls: "text-[#F4A524] border-[#F4A524]/30" },
+    discussion: { label: "Discussion", cls: "text-[#F5F0E8]/70 border-[#F5F0E8]/20" },
+    keynote: { label: "Keynote", cls: "text-[#F4A524] border-[#F4A524]/40" },
+    panel: { label: "Panel", cls: "text-[#C75B39] border-[#C75B39]/40" },
+  };
+  const s = map[type];
+  if (!s) return null;
+  return (
+    <span className={`inline-block text-[10px] tracking-[0.25em] uppercase px-2.5 py-1 border rounded-sm ${s.cls}`}>
+      {s.label}
+    </span>
+  );
+}
+
+function ItemCard({ item }: { item?: AgendaItem }) {
+  if (!item) return <div className="hidden md:block" aria-hidden />;
+
+  const minor = item.type === "opening" || item.type === "closing" || item.type === "break";
+  if (minor) {
+    return (
+      <div className="text-center py-3 text-[#F5F0E8]/40 text-sm tracking-wide italic">
+        {item.title}
+      </div>
+    );
+  }
+
+  const isPanel = item.type === "panel";
+
+  return (
+    <div className="card-glass p-5 md:p-6 hover:border-[#F5F0E8]/15 transition-colors">
+      <FormatBadge type={item.type} />
+      <h4 className="font-editorial text-lg md:text-xl text-[#F5F0E8] mt-3 leading-snug">
+        {item.title}
+        {item.speaker && (
+          <span className="text-[#F5F0E8]/50 font-normal"> ({item.speaker})</span>
+        )}
+        {item.tbd && (
+          <span className="text-[#F5F0E8]/40 italic font-normal text-base"> &middot; TBD</span>
+        )}
+      </h4>
+      {isPanel && (
+        <div className="text-sm text-[#F5F0E8]/60 mt-3 space-y-1">
+          {item.moderator && (
+            <p>
+              <span className="text-[#F5F0E8]/40">Moderator: </span>
+              <span className="text-[#F4A524]">{item.moderator}</span>
+            </p>
+          )}
+          {item.panelists && (
+            <p>
+              <span className="text-[#F5F0E8]/40">Panelists: </span>
+              {item.panelists.join(", ")}
+            </p>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function DaySection({
+  number,
+  date,
+  am,
+  pm,
+}: {
+  number: number;
+  date: string;
+  am: AMRow[];
+  pm: PMRow[];
+}) {
+  return (
+    <div className="mb-24 last:mb-0">
+      <div className="flex items-baseline gap-6 mb-12 pb-6 border-b border-[#F5F0E8]/10">
+        <span className="font-editorial text-5xl md:text-7xl text-[#F5F0E8] leading-none">
+          Day {number}
+        </span>
+        <span className="text-[#F4A524] tracking-[0.3em] uppercase text-sm">
+          {date}
+        </span>
+      </div>
+
+      <div className="mb-16">
+        <div className="flex items-center gap-4 mb-8">
+          <span className="font-editorial text-3xl text-[#C75B39]">AM</span>
+          <span className="text-xs tracking-[0.3em] uppercase text-[#F5F0E8]/50">
+            Single Track
+          </span>
+          <div className="flex-1 h-px bg-gradient-to-r from-[#C75B39]/30 to-transparent" />
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-[150px_1fr] gap-x-8 gap-y-4">
+          {am.map((row, i) => (
+            <Fragment key={i}>
+              <div className="text-sm tracking-widest uppercase text-[#F5F0E8]/50 md:pt-3">
+                {row.time}
+              </div>
+              <ItemCard item={row.item} />
+            </Fragment>
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <div className="flex items-center gap-4 mb-8">
+          <span className="font-editorial text-3xl text-[#F4A524]">PM</span>
+          <span className="text-xs tracking-[0.3em] uppercase text-[#F5F0E8]/50">
+            Two Tracks &middot; Unconference
+          </span>
+          <div className="flex-1 h-px bg-gradient-to-r from-[#F4A524]/30 to-transparent" />
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-[150px_1fr_1fr] gap-x-6 gap-y-4">
+          <div className="hidden md:block" aria-hidden />
+          <div className="hidden md:block text-xs tracking-[0.3em] uppercase text-[#F5F0E8]/40 pb-2 border-b border-[#F5F0E8]/5">
+            Track A
+          </div>
+          <div className="hidden md:block text-xs tracking-[0.3em] uppercase text-[#F5F0E8]/40 pb-2 border-b border-[#F5F0E8]/5">
+            Track B
+          </div>
+
+          {pm.map((row, i) => (
+            <Fragment key={i}>
+              <div className="text-sm tracking-widest uppercase text-[#F5F0E8]/50 md:pt-3">
+                {row.time}
+              </div>
+              {row.isBreak ? (
+                <div className="md:col-span-2 text-center py-3 text-[#F5F0E8]/40 text-sm tracking-wide italic">
+                  Break
+                </div>
+              ) : (
+                <>
+                  <ItemCard item={row.trackA} />
+                  <ItemCard item={row.trackB} />
+                </>
+              )}
+            </Fragment>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function Home() {
   return (
@@ -263,76 +419,36 @@ export default function Home() {
       {/* Agenda Section */}
       <section className="py-32 bg-gradient-to-b from-[#0D0D0D] to-[#1A1A1A]" id="agenda">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-20">
+          <div className="text-center mb-20 max-w-3xl mx-auto">
             <span className="text-xs tracking-[0.3em] uppercase text-[#C75B39] mb-4 block">
-              What to Expect
+              Two Days, Two Formats
             </span>
             <h2 className="font-editorial text-4xl md:text-5xl text-[#F5F0E8]">
-              Summit Format
+              Agenda
             </h2>
+            <p className="text-[#F5F0E8]/60 mt-6 leading-relaxed">
+              Curated mornings: keynote, featured talk, and panel discussion.
+              Afternoons run two parallel tracks of community-driven sessions.
+            </p>
           </div>
-          
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {/* Morning Sessions */}
-            <div className="card-glass p-8 group hover:border-[#C75B39]/30 transition-all duration-500">
-              <div className="flex items-center gap-4 mb-6">
-                <span className="font-editorial text-5xl text-[#C75B39]">AM</span>
-                <div className="h-px flex-1 bg-gradient-to-r from-[#C75B39]/50 to-transparent" />
-              </div>
-              <h3 className="text-xl font-semibold text-[#F5F0E8] mb-4">
-                Structured Sessions
-              </h3>
-              <p className="text-[#F5F0E8]/50 mb-6">
-                10:00 AM — 12:15 PM each day
-              </p>
-              <ul className="space-y-3">
-                {['Keynote presentations', 'Expert panel discussions', 'Moderated Q&A sessions'].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-[#F5F0E8]/70">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#C75B39] mt-2 flex-shrink-0" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            
-            {/* Afternoon Sessions */}
-            <div className="card-glass p-8 group hover:border-[#F4A524]/30 transition-all duration-500">
-              <div className="flex items-center gap-4 mb-6">
-                <span className="font-editorial text-5xl text-[#F4A524]">PM</span>
-                <div className="h-px flex-1 bg-gradient-to-r from-[#F4A524]/50 to-transparent" />
-              </div>
-              <h3 className="text-xl font-semibold text-[#F5F0E8] mb-4">
-                Unconference Sessions
-              </h3>
-              <p className="text-[#F5F0E8]/50 mb-6">
-                2:00 PM onwards each day
-              </p>
-              <ul className="space-y-3">
-                {['Participant-led discussions', 'Open collaboration time', 'Networking opportunities'].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-[#F5F0E8]/70">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#F4A524] mt-2 flex-shrink-0" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
 
-              <div className="mt-8 pt-6 border-t border-[#F5F0E8]/10">
-                <Link
-                  href="/submit-session/"
-                  className="inline-flex items-center text-sm font-medium text-[#F4A524] hover:text-[#F5F0E8] transition-colors group"
-                >
-                  Propose a Session
-                  <svg className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </Link>
-              </div>
-            </div>
+          <div className="max-w-6xl mx-auto">
+            <DaySection number={1} date="May 12" am={day1AM} pm={day1PM} />
+            <DaySection number={2} date="May 13" am={day2AM} pm={day2PM} />
           </div>
-          
-          <p className="text-center text-[#F5F0E8]/40 mt-12 text-sm tracking-wide">
-            Detailed agenda will be announced closer to the event
-          </p>
+
+          <div className="text-center mt-20 pt-16 border-t border-[#F5F0E8]/10 max-w-2xl mx-auto">
+            <span className="text-xs tracking-[0.3em] uppercase text-[#F4A524] mb-4 block">
+              Unconference
+            </span>
+            <p className="text-[#F5F0E8]/60 mb-8 leading-relaxed">
+              Submissions remain open for additional unconference sessions.
+              Share what you&apos;re working on, spark a discussion, or lead a workshop.
+            </p>
+            <Link href="/submit-session/" className="btn-outline">
+              Propose a Session
+            </Link>
+          </div>
         </div>
       </section>
 
