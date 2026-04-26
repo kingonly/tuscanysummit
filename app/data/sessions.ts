@@ -127,10 +127,10 @@ export const day1PM: PMRow[] = [
     },
     trackB: {
       type: "talk",
-      title: "Wallet-Linked Offers: The Missing Incentive Layer",
-      speaker: "Tomas Chojnacki",
+      title: "Introducing LDK Server",
+      speaker: "Elias Rohrer",
       description:
-        "Bitcoin merchant infrastructure is here. Payment volume isn't. The missing piece is incentives \u2014 the same lever card networks used to drive mass payment adoption. We built the Bitcoin-native equivalent: merchant-funded wallet-linked offers on Lightning and NWC that deliver instant sats-back to any Lightning wallet, at any BTCPay Server merchant, without surveillance. Live demo included.",
+        "LDK Server is a new Lightning daemon implementation based on LDK / LDK Node. In this introductory talk we'll give an overview of the feature roadmap and a quick demo of its current capabilities.",
     },
   },
   { time: "14:30 \u2013 14:45", isBreak: true },
@@ -176,10 +176,10 @@ export const day2PM: PMRow[] = [
     time: "14:00 \u2013 14:30",
     trackA: {
       type: "talk",
-      title: "Introducing LDK Server",
-      speaker: "Elias Rohrer",
+      title: "Wallet-Linked Offers: The Missing Incentive Layer",
+      speaker: "Tomas Chojnacki",
       description:
-        "LDK Server is a new Lightning daemon implementation based on LDK / LDK Node. In this introductory talk we'll give an overview of the feature roadmap and a quick demo of its current capabilities.",
+        "Bitcoin merchant infrastructure is here. Payment volume isn't. The missing piece is incentives \u2014 the same lever card networks used to drive mass payment adoption. We built the Bitcoin-native equivalent: merchant-funded wallet-linked offers on Lightning and NWC that deliver instant sats-back to any Lightning wallet, at any BTCPay Server merchant, without surveillance. Live demo included.",
     },
     trackB: {
       type: "talk",
