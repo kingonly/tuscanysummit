@@ -437,18 +437,6 @@ export default function Home() {
             <DaySection number={2} date="May 13" am={day2AM} pm={day2PM} />
           </div>
 
-          <div className="text-center mt-20 pt-16 border-t border-[#F5F0E8]/10 max-w-2xl mx-auto">
-            <span className="text-xs tracking-[0.3em] uppercase text-[#F4A524] mb-4 block">
-              Unconference
-            </span>
-            <p className="text-[#F5F0E8]/60 mb-8 leading-relaxed">
-              Submissions remain open for additional unconference sessions.
-              Share what you&apos;re working on, spark a discussion, or lead a workshop.
-            </p>
-            <Link href="/submit-session/" className="btn-outline">
-              Propose a Session
-            </Link>
-          </div>
         </div>
       </section>
 
