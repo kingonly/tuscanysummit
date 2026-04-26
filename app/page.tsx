@@ -222,7 +222,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="btn-primary"
             >
-              Apply for Invitation
+              Join Waiting List
             </Link>
             <Link href="#about" className="btn-outline">
               Discover More
@@ -451,12 +451,12 @@ export default function Home() {
               Join Us
             </span>
             <h2 className="font-editorial text-4xl md:text-6xl text-[#F5F0E8] mb-8">
-              Apply for <span className="italic">Invitation</span>
+              Join the <span className="italic">Waiting List</span>
             </h2>
-            
+
             <p className="text-xl text-[#F5F0E8]/60 leading-relaxed mb-12">
-              The Tuscany Lightning Summit is an invite-only gathering. Complete our application 
-              to request participation. All applications are carefully reviewed and subject to approval.
+              The Tuscany Lightning Summit is an invite-only gathering and all spots for this
+              edition are currently taken. Join the waiting list to be notified if a place opens up.
             </p>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
@@ -466,7 +466,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="btn-primary animate-glow-pulse"
               >
-                Submit Application
+                Join Waiting List
               </Link>
               
               <Link
@@ -544,7 +544,7 @@ export default function Home() {
                 Location
               </Link>
               <Link href="#apply" className="text-sm text-[#F5F0E8]/40 hover:text-[#F5F0E8] transition-colors">
-                Apply
+                Waiting List
               </Link>
             </div>
           </div>

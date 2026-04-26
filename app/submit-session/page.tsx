@@ -217,7 +217,7 @@ export default function SubmitSession() {
                 Location
               </Link>
               <Link href="/#apply" className="text-sm text-[#F5F0E8]/40 hover:text-[#F5F0E8] transition-colors">
-                Apply
+                Waiting List
               </Link>
             </div>
           </div>

@@ -95,7 +95,7 @@ export default function Navigation() {
               rel="noopener noreferrer"
               className="ml-4 relative inline-flex items-center px-5 py-2.5 text-sm font-semibold text-[#0D0D0D] bg-gradient-to-r from-[#F4A524] to-[#C75B39] overflow-hidden group"
             >
-              <span className="relative z-10 tracking-wide">Apply</span>
+              <span className="relative z-10 tracking-wide">Waiting List</span>
               <span className="absolute inset-0 bg-gradient-to-r from-[#C75B39] to-[#F4A524] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </Link>
           </div>
@@ -133,7 +133,7 @@ export default function Navigation() {
               className="mt-4 mx-4 py-3 text-center font-semibold text-[#0D0D0D] bg-gradient-to-r from-[#F4A524] to-[#C75B39]"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Apply for Invitation
+              Join Waiting List
             </Link>
           </div>
         </div>
