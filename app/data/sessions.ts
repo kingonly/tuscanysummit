@@ -163,7 +163,7 @@ export const day1PM: PMRow[] = [
     },
     trackB: {
       type: "talk",
-      title: "Bitcoin PIPEs: Covenants and Non-interactive ZKPs on Bitcoin via Witness Encryption, No Soft Forks",
+      title: "Bitcoin PIPEs: Covenants & ZKPs Without Soft Forks",
       speaker: "Scott Odell",
       description:
         "Bitcoin PIPEs v2 is a cryptographic primitive using witness encryption and non-interactive ZKPs to emulate missing opcodes (OP_VAULT, OP_CTV, et al), enforce arbitrary spending conditions, and bring more expressivity to Bitcoin without changing consensus. With PIPEs, as the first witness encryption scheme made practical for Bitcoin 10m block times, spending logic enforcement shifts from Bitcoin Script to purely cryptography.",
