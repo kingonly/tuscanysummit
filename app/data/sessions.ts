@@ -110,7 +110,7 @@ export const day2AM: AMRow[] = [
         "John Carvalho",
         "Steven Roose",
         "Elias Rohrer",
-        "David Seroy",
+        "Kilian Rausch",
       ],
     },
   },
@@ -162,11 +162,11 @@ export const day1PM: PMRow[] = [
         "Explore how to build next-gen Bitcoin applications using KaleidoSDK and CLI. This hands-on workshop showcases the Kaleido Wallet browser extension and its multi-layer capabilities (Spark, Arkade, RGB Lightning). Learn how to integrate atomic swaps, manage assets across layers, and create seamless user experiences on Bitcoin's evolving stack.",
     },
     trackB: {
-      type: "discussion",
-      title: "Bitcoin Backed Lending",
-      speaker: "Max Kei",
+      type: "talk",
+      title: "Bitcoin PIPEs: Covenants and Non-interactive ZKPs on Bitcoin via Witness Encryption, No Soft Forks",
+      speaker: "Scott Odell",
       description:
-        "We'll cover Bitcoin-backed lending: non-custodial vs custodial setups, how Bitcoin Layer 2 solutions can be used in lending, and more.",
+        "Bitcoin PIPEs v2 is a cryptographic primitive using witness encryption and non-interactive ZKPs to emulate missing opcodes (OP_VAULT, OP_CTV, et al), enforce arbitrary spending conditions, and bring more expressivity to Bitcoin without changing consensus. With PIPEs, as the first witness encryption scheme made practical for Bitcoin 10m block times, spending logic enforcement shifts from Bitcoin Script to purely cryptography.",
     },
   },
 ];
