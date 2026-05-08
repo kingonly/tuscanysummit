@@ -90,7 +90,11 @@ export const day2AM: AMRow[] = [
   },
   {
     time: "10:10 \u2013 10:40",
-    item: { type: "keynote", title: "Keynote", tbd: true },
+    item: {
+      type: "keynote",
+      title: "Agentic Commerce Fixes Everything",
+      speaker: "Sergej Kotliar",
+    },
   },
   {
     time: "10:45 \u2013 11:15",
