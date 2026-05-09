@@ -176,7 +176,7 @@ export const day1PM: PMRow[] = [
     time: "16:30 \u2013 17:15",
     trackA: {
       type: "workshop",
-      title: "Building Multi-Layer Bitcoin Apps with KaleidoSDK & Wallet",
+      title: "Building Multi-Layer Bitcoin Apps with KaleidoSDK",
       speaker: "Walter Maffione",
       description:
         "Explore how to build next-gen Bitcoin applications using KaleidoSDK and CLI. This hands-on workshop showcases the Kaleido Wallet browser extension and its multi-layer capabilities (Spark, Arkade, RGB Lightning). Learn how to integrate atomic swaps, manage assets across layers, and create seamless user experiences on Bitcoin's evolving stack.",
