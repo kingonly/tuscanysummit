@@ -218,11 +218,9 @@ export const day2PM: PMRow[] = [
         "B-SSL is a Taproot-based, covenant-free vault architecture that makes Bitcoin self-custody survive key loss. Even if all keys are lost, funds remain recoverable through time-locked paths involving custodians \u2014 who cannot collude due to enforced delays. It removes the need for trust: keep full ownership of your funds while B-SSL ensures you can always regain access.",
     },
     trackB: {
-      type: "discussion",
-      title: "P2Poolv2 Payouts",
-      speaker: "Kulpreet Singh",
-      description:
-        "P2Poolv2's payout mechanism lets miners trade their PoW shares for BTC using atomic swaps \u2014 potentially through Boltz. However, the liquidity and cross-chain nature of our swaps is a concern, and it seems LN implementations have stopped supporting cross-chain swaps (does Core Lightning still maintain it?). The goal is to brainstorm with Lightning developers how we can address these concerns, and to share how Ark seems more promising for decentralising payouts.",
+      type: "talk",
+      title: "RGB on Lightning: Challenges and Roadmap",
+      speaker: "Zoe Faltiba",
     },
   },
   { time: "15:15 \u2013 15:30", isBreak: true },
@@ -254,9 +252,11 @@ export const day2PM: PMRow[] = [
         "Learn how to use AI for marketing. We'll cover processes, tools, and real examples, giving builders the knowledge to set up and apply AI to their own marketing straight away.",
     },
     trackB: {
-      type: "workshop",
-      title: "Glow: Breez SDK Playground",
-      speaker: "Roy Sheinfeld",
+      type: "discussion",
+      title: "P2Poolv2 Payouts",
+      speaker: "Kulpreet Singh",
+      description:
+        "P2Poolv2's payout mechanism lets miners trade their PoW shares for BTC using atomic swaps — potentially through Boltz. However, the liquidity and cross-chain nature of our swaps is a concern, and it seems LN implementations have stopped supporting cross-chain swaps (does Core Lightning still maintain it?). The goal is to brainstorm with Lightning developers how we can address these concerns, and to share how Ark seems more promising for decentralising payouts.",
     },
   },
 ];
