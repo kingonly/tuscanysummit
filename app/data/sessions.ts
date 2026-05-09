@@ -160,7 +160,7 @@ export const day1PM: PMRow[] = [
     time: "15:30 \u2013 16:15",
     trackA: {
       type: "talk",
-      title: "Past, Present and Future of RGB",
+      title: "RGB as a Multi-L2 Standard",
       speaker: "Federico Tenga",
     },
     trackB: {
